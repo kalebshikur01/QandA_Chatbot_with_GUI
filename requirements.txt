@@ -13,3 +13,4 @@ langchain-text-splitters
 chromadb
 langchain_huggingface
 streamlit
+bs4
