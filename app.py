@@ -39,7 +39,7 @@ api_key=st.sidebar.text_input("Enter API key", type="password")
 
 engine=st.sidebar.selectbox("Select OpenAI model", ["gpt-4o", "gpt-4-turbo","gpt-4"])
 
-temprature=st.sidebar.slider("Temprature", min_value=0.1, max_value=1, value=0.1)
+temprature=st.sidebar.slider("Temprature", min_value=0.1, max_value=1.0, value=0.1)
 max_tokens=st.sidebar.slider("Max Tokens", min_value=50, max_value=300, value=150)
 
 st.write("Ask your question")
@@ -58,4 +58,3 @@ else:
     st.write("Please provide the user input")
 
 
-    
