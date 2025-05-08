@@ -30,3 +30,32 @@ def generate_response(question, api_key, llm, temprature, max_tokens):
     answer=chain.invoke(question)
 
     return answer
+
+st.title("Enhanced Q&A Chatbot With OpenAI")
+
+st.sidebar.title("settings")
+
+api_key=st.sidebar.text_input("Enter API key", type="password")
+
+engine=st.sidebar.selectbox("Select OpenAI model", ["gpt-4o", "gpt-4-turbo","gpt-4"])
+
+temprature=st.sidebar.slider("Temprature", min_value=0.1, max_value=1, value=0.1)
+max_tokens=st.sidebar.slider("Max Tokens", min_value=50, max_value=300, value=150)
+
+st.write("Ask your question")
+
+user_input=st.text_input("You:")
+
+
+if user_input and api_key:
+    response=generate_response(user_input, api_key, engine, temprature, max_tokens)
+    st.write(response)
+
+elif user_input:
+    st.write("Please provide the appropriate API key")
+
+else:
+    st.write("Please provide the user input")
+
+
+    
