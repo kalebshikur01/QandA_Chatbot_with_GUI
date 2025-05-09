@@ -2,6 +2,7 @@ ipykernel
 langchain-openai
 langchain
 langchain_community
+langchain-ollama
 python-dotenv
 langchain_core
 langchain-groq
